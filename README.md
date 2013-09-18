@@ -31,6 +31,11 @@ modify the class with a custom prefix:
 
 markup some css to respond accordingly:
 ```css
+body {
+    /* I am the desktop view */
+    background:grey;
+	color:#000;
+}
 body.bp1200 .box {
 	background:yellow;
 	color:#000;
