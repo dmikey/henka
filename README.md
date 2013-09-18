@@ -1,4 +1,4 @@
-henka
+henka 変化 (a side step to avoid an attack)
 =====
 
 Light, portable, responsive javascript - responsive all the things.
