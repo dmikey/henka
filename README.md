@@ -24,3 +24,5 @@ henka.onUpdate(function(breakpoint){
     breaklabel.innerHTML = breakpoint;
 });
 ```
+
+in action: https://dl.dropboxusercontent.com/u/10409166/henka/new_henka.html
