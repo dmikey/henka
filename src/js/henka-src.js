@@ -27,13 +27,14 @@ window['henka'] = (function (window, document, undefined) {
             'set': function (element) {
                 var breakPoints = JSON.parse(element.getAttribute('data-henka')),
                     match = '',
+                    prefix = element.getAttribute('data-henka-prefix') || 'bp',
                     classes = element.className.split(' ');
                 if(breakPoints){
                     for (var i = breakPoints.length - 1; i >= 0; i--) {
                         if (_.core.check(breakPoints[i])) {
-                            match = 'bp' + breakPoints[i];
+                            match = prefix + breakPoints[i];
                         }
-                        var arrIndex = _.tools.indexOf(classes, 'bp' + breakPoints[i]);
+                        var arrIndex = _.tools.indexOf(classes, prefix + breakPoints[i]);
                         if (arrIndex >= 0) {
                             classes.splice(arrIndex, 1);
                         }
