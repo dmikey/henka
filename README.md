@@ -8,6 +8,11 @@ A single purpose library compatible with IE 6, 7, 8, 9, 10. Safari, Chrome, Fire
 ![Todd. R Fleeman](https://dl.dropboxusercontent.com/u/10409166/henka/henka_done.png)
 
 
+include henka in your page, no dependencies:
+```html
+<script src="henka.min.js"></script>
+```
+
 small markup to the body tag to add breakpoints:
 ```html
 <body data-henka="[300,600,900,1200]">
