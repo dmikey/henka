@@ -14,13 +14,13 @@ only small markup to the body tag to add breakpoints:
 
 support for no conflict mode:
 ```javascript
-    var _henka = henka.noConflict();
+var _henka = henka.noConflict();
 ```
 
 henka supports javascript event binding:
 ```javascript
-    henka.onUpdate(function(breakpoint){
-        var breaklabel = document.getElementById('breaklabel');
-        breaklabel.innerHTML = breakpoint;
-    });
+henka.onUpdate(function(breakpoint){
+    var breaklabel = document.getElementById('breaklabel');
+    breaklabel.innerHTML = breakpoint;
+});
 ```
