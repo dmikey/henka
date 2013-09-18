@@ -1,7 +1,7 @@
-henka 変化 (a side step to avoid an attack)
+henka 変化
 =====
 
-Light, portable, responsive javascript - responsive all the things.
+Light, portable, responsive javascript (a side step to avoid an attack).
 
 A single purpose library compatible with IE 6, 7, 8, 9, 10. Safari, Chrome, Firefox.
 
