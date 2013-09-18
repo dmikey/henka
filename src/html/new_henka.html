@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>henka : side step the attack</title>
+    <script>
+        window.henka = "bullshit";
+    </script>
+    
+    <script src="../js/henka-src.js"></script>
+    
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+<!--[if lt IE 9]>
+    <script src="js/json2.js"></script> 
+<![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Bubbler+One' rel='stylesheet' type='text/css'>
+<style>
+body {
+        padding:0;
+        margin:0;
+}
+/* git hub banner */
+#banner {
+        height:149px;
+        width:149px;
+        overflow:hidden;
+        padding:0;
+        margin:0;
+        float:right;
+}
+#banner a {
+    display:block;
+    width:190px;
+    font-size:14px;
+    font-family:Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT",				"Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,				Geneva,"Helvetica Neue",Helvetica,Arial,sans serif;
+    background-color:#333;
+    color:#FFF;
+    word-spacing:2px;
+    text-decoration:none;
+    padding:5px 15px 5px 25px;
+                position:relative;
+    left:20px;
+    top:-37px;
+    text-align:center;
+                -moz-transform-origin:0 0;
+    -moz-transform:rotate(45deg);
+    -moz-box-shadow:1px 1px 5px 1px #666;
+                -webkit-transform-origin:0 0;
+        -webkit-transform:rotate(45deg);
+    -webkit-box-shadow:1px 1px 5px 1px #666;
+                -ms-transform-origin:0 0;
+        -ms-transform:rotate(45deg);
+    -ms-box-shadow:1px 1px 5px 1px #666;
+                transform-origin:0 0;
+        transform:rotate(45deg);
+    box-shadow:1px 1px 5px 1px #666;
+                background-image:linear-gradient(bottom,#000000 3%,#666666 5%,#000000 7%,#000000 93%,#666666 95%,#000000 97%);
+    background-image:-o-linear-gradient(bottom,#000000 3%,#666666 5%,#000000 7%,#000000 93%,#666666 95%,#000000 97%);
+    background-image:-moz-linear-gradient(bottom,#000000 3%,#666666 5%,#000000 7%,#000000 93%,#666666 95%,#000000 97%);
+    background-image:-webkit-linear-gradient(bottom,#000000 3%,#666666 5%,#000000 7%,#000000 93%,#666666 95%,#000000 97%);
+    background-image:-ms-linear-gradient(bottom,#000000 3%,#666666 5%,#000000 7%,#000000 93%,#666666 95%,#000000 97%);
+                background-image:-webkit-gradient(				linear,			left bottom,			left top,			color-stop(0.03,#000000),			color-stop(0.05,#666666),			color-stop(0.07,#000000),			color-stop(0.93,#000000),			color-stop(0.95,#666666),			color-stop(0.97,#000000)			);
+}
+/* demo styles */
+.box {
+	width:200px;
+	height:200px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:grey;
+	color:#fff;
+}
+body.bp1200 .box {
+	background:yellow;
+	color:#000;
+}
+body.bp600 .box {
+	background:red;
+	color:#000;
+}
+body.bp300 .box {
+	background:blue;
+	color:#000;
+}
+body.bp900 .box {
+	background:green;
+	color:#fff;
+}
+body.bp1200 {
+	background:teal;
+	color:#fff;
+}
+body.bp600 {
+	background:pink;
+	color:#000;
+}
+body.bp300 {
+	background:blue;
+	color:#000;
+}
+body.bp900 {
+	background:#666;
+	color:#fff;
+}
+h1,h2,h3{
+	font-family:'Cinzel Decorative';
+	padding-left:15px;
+	padding-right:15px;
+}
+p{
+	font-family:'Bubbler One';
+	padding-left:15px;
+	padding-right:15px;
+}
+h1 {
+	font-size:5em;
+	line-height:10px;
+	margin-top:0px;
+	padding-top:25px;
+}
+h1 img {
+	height:64px;
+}
+p.license {
+	font-size:.7em;
+	font-family: arial;
+}
+</style>
+</head>
+<body data-henka="[300,600,900,1200]">
+<div id="banner">
+	<a href="">Fork me on GitHub</a>
+</div>
+<h1><img src="../images/henka-logo.png">HENKA</h1>
+<h3>responsive all the things! (resize this page to watch it respond)</h3>
+<p>
+	Light weight, ultra portable, responsive javascript library &mdash; henka will detect view-port size on initial load of the page, and when the window is resized.
+</p>
+<p>
+	Small compact, and single purpose - add classes to elements based on a breakpoint. Nothing more.
+</p>
+<p>
+	Compatible <b>IE 6</b>, 7, 8, 9, 10. Safari, Chrome, Firefox.
+</p>
+<h3>Get started fast, no additional Javascript to write.</h3>
+<p>
+	Add a script tag to the source
+</p>
+<pre>
+     &lt;script src=&quot;henka.js&quot;&gt;
+     &lt;/script&gt;
+</pre>
+<p>
+	Markup the body tag with breakpoints.
+</p>
+<pre>
+    &lt;body
+    data-henka='
+        [300, 600, 900, 1200]
+    '/&gt;
+</pre>
+<div class="box">
+	 Current Breakpoint: <span id="breaklabel"></span>
+</div>
+<p>
+	Event driven callbacks.
+</p> 
+<pre>
+    &lt;script&gt;
+     var _henka = henka.noConflict();
+     _henka.onUpdate(
+     function(breakpoint){
+          //breakpoint passed
+          //as a string "bp900"
+     });
+    &lt;/script&gt;
+</pre>
+    
+<p class="license">
+	 The MIT License (MIT) | Copyright (c) 2013 Derek M. Anderson http://www.github.com/toxigenicpoem/henka
+</p>
+    
+<script>
+    var _henka = henka.noConflict();
+    _henka.onUpdate(function(breakpoint){
+        var breaklabel = document.getElementById('breaklabel');
+        breaklabel.innerHTML = breakpoint;
+    });
+</script>
+    
+</body>
+</html>
