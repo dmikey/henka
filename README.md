@@ -1,4 +1,4 @@
-![Logo by Todd. R Fleeman](https://dl.dropboxusercontent.com/u/10409166/henka/henka_logo_small.png) 変化
+![Logo by Todd. R Fleeman](https://dl.dropboxusercontent.com/u/10409166/henka/henka_logo_small.png)
 =====
 
 Light, portable, responsive javascript (a side step to avoid an attack).
