@@ -1,11 +1,11 @@
-henka 変化
+![Logo by Todd. R Fleeman](https://dl.dropboxusercontent.com/u/10409166/henka/henka_logo_small.png) 変化
 =====
 
 Light, portable, responsive javascript (a side step to avoid an attack).
 
 A single purpose library compatible with IE 6, 7, 8, 9, 10. Safari, Chrome, Firefox.
 
-![Todd. R Fleeman](https://dl.dropboxusercontent.com/u/10409166/henka/henka_done.png)
+![Diagram by Todd. R Fleeman](https://dl.dropboxusercontent.com/u/10409166/henka/henka_done.png)
 
 
 include henka in your page, no dependencies:
@@ -36,15 +36,15 @@ body {
     background:grey;
 	color:#000;
 }
-body.bp1200 .box {
+body.bp1200 {
 	background:yellow;
 	color:#000;
 }
-body.bp600 .box {
+body.bp600 {
 	background:red;
 	color:#000;
 }
-body.bp300 .box {
+body.bp300 {
 	background:blue;
 	color:#000;
 }
