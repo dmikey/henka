@@ -50,17 +50,20 @@ body.bp300 {
 }
 ```
 
-henka supports javascript event binding:
+with yobidashi you can catch resize broadcasts:
+https://github.com/toxigenicpoem/yobidashi
 ```javascript
-henka.onUpdate(function(breakpoint){
-    var breaklabel = document.getElementById('breaklabel');
-    breaklabel.innerHTML = breakpoint;
-});
+//yobidashi pub/subbed for decoupled javascript!
+var qued_cb = yobidashi.bind(function(){
+    var breakpoint = this.currentBreak();
+    //do some stuff here and you know the breakpoint
+}, henka);                       
+yobidashi.sub('/henka/resized', qued_cb);  
 ```
 
 support for no conflict mode:
 ```javascript
 var _henka = henka.noConflict();
 ```
-
+s
 in action: https://dl.dropboxusercontent.com/u/10409166/henka/new_henka.html
