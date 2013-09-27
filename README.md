@@ -60,7 +60,8 @@ var cb = yobidashi.bind(function(){
 }, henka);          
 
 yobidashi.sub('/henka/resized', cb);
-yobidashi.sub('/henka/updated', cb);
+//current channels are '/henka/resized' and '/henka/updated'
+//bind to henka to retrieve currentBreakpoint
 ```
 
 support for no conflict mode:
