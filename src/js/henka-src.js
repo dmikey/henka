@@ -1,7 +1,3 @@
-// ==ClosureCompiler==
-// @compilation_level ADVANCED_OPTIMIZATIONS
-// @output_file_name henka-min.js
-// ==/ClosureCompiler==
 window['henka'] = (function (window, document, undefined) {
     
     'use strict';
@@ -27,14 +23,13 @@ window['henka'] = (function (window, document, undefined) {
             'set': function (element) {
                 var breakPoints = JSON.parse(element.getAttribute('data-henka')),
                     match = '',
-                    prefix = element.getAttribute('data-henka-prefix') || 'bp',
                     classes = element.className.split(' ');
                 if(breakPoints){
                     for (var i = breakPoints.length - 1; i >= 0; i--) {
                         if (_.core.check(breakPoints[i])) {
-                            match = prefix + breakPoints[i];
+                            match = 'bp' + breakPoints[i];
                         }
-                        var arrIndex = _.tools.indexOf(classes, prefix + breakPoints[i]);
+                        var arrIndex = _.tools.indexOf(classes, 'bp' + breakPoints[i]);
                         if (arrIndex >= 0) {
                             classes.splice(arrIndex, 1);
                         }
@@ -50,13 +45,13 @@ window['henka'] = (function (window, document, undefined) {
                     //only update if the class actually updated
                     element.className = classes.join(' ').replace(/^\s+|\s+$/g, '');
                     //emit update event if updated
-                    _.tools.emit('henka.fired.update');
+                    if(typeof(yobidashi) !== 'undefined'){yobidashi.pub('/henka/updated');}
                 }
             },
             //update function, fire resize event
             update: function () {
                 _.core.set(_.props.body);
-                _.tools.emit('henka.fired.resize');
+                if(typeof(yobidashi) !== 'undefined'){yobidashi.pub('/henka/resized');}
             },
             check: function (breakpoint) {
                 //check to see if the view-port is with in the breakpoint bounds
@@ -91,21 +86,6 @@ window['henka'] = (function (window, document, undefined) {
                     }
                 }
                 return false;
-            },
-            emit: function (eventname) {
-                //emit event
-                var uniqueName = 'f172d5e9.' + eventname;
-                if (document.addEventListener) {
-                    var event = new window['CustomEvent'](uniqueName, {
-                        'detail': _.props.currentBreak
-                    });
-                    var elem = document.getElementsByTagName('body')[0];
-                    elem.dispatchEvent(event);
-                } else {
-                    if (document.attachEvent) {
-                        document.documentElement[uniqueName] = _.props.currentBreak;
-                    }
-                }
             },
             attach: function () {
                 //attach to window.resize, but do it smart. check the time between movements.
@@ -149,22 +129,6 @@ window['henka'] = (function (window, document, undefined) {
                 } else {
                     window.attachEvent('onresize', resize);
                 }
-            },
-            bindCallback: function (eventname, callback) {
-                // bind a callback to an event emitter
-                if (document.createEvent) {
-                    var obj = document.getElementsByTagName('body')[0];
-                    obj.addEventListener(eventname, function (e) {
-                        callback(e.detail);
-                    });
-                } else if (document.createEventObject) {
-                    document.documentElement.attachEvent('onpropertychange', function (e) {
-                        // if the property changed is the custom jqmReady property
-                        if (e.propertyName == eventname) {
-                            callback(document.documentElement[eventname]);
-                        }
-                    });
-                }
             }
         }
     };
@@ -184,11 +148,8 @@ window['henka'] = (function (window, document, undefined) {
                 window['henka'] = _.props.originalHenka;
                 return _.api;
             },
-            'onUpdate': function (callback) {
-                _.tools.bindCallback('f172d5e9.henka.fired.update', callback);
-            },
-            'onResize': function (callback) {
-                _.tools.bindCallback('f172d5e9.henka.fired.resize', callback);
+            'currentBreak' : function(){
+                return _.props.currentBreak;
             }
         };
     }());
