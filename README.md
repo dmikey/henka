@@ -54,11 +54,13 @@ with yobidashi you can catch resize broadcasts:
 https://github.com/toxigenicpoem/yobidashi
 ```javascript
 //yobidashi pub/subbed for decoupled javascript!
-var qued_cb = yobidashi.bind(function(){
+var cb = yobidashi.bind(function(){
     var breakpoint = this.currentBreak();
     //do some stuff here and you know the breakpoint
-}, henka);                       
-yobidashi.sub('/henka/resized', qued_cb);  
+}, henka);          
+
+yobidashi.sub('/henka/resized', cb);
+yobidashi.sub('/henka/updated', cb);
 ```
 
 support for no conflict mode:
