@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             frontend: {
                     closurePath: '/usr/local/opt/closure-compiler/libexec',
                     js: 'src/js/henka-src.js',
-                    jsOutputFile: 'build/henka.min.js',
+                    jsOutputFile: 'dist/henka.min.js',
                     maxBuffer: 500,
                     noreport: true,
                     options: {
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-closure-compiler');
-    
+
     grunt.registerInitTask('default', 'run the full build process', [
         'closure-compiler'
     ]);
