@@ -1,4 +1,12 @@
-all: package
+all: buildinline
+
+build: gruntfile.js
+	. henka/bin/activate && \
+	grunt
+
+buildinline: package
+	. henka/bin/activate && \
+	grunt
 
 packages: package.json
 	. henka/bin/activate && \

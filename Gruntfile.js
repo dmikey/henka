@@ -1,11 +1,8 @@
 module.exports = function(grunt) {
-//install closure compiler on OSX
-//brew install closure-compiler
-//run "brew --prefix closure-compiler" to obtain path
     grunt.initConfig({
         'closure-compiler': {
             frontend: {
-                    closurePath: '/usr/local/opt/closure-compiler/libexec',
+                    closurePath: '.',
                     js: 'src/js/henka-src.js',
                     jsOutputFile: 'dist/henka.min.js',
                     maxBuffer: 500,
