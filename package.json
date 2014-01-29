@@ -4,7 +4,10 @@
   "version": "0.0.0",
   "author": "derek m anderson <dmanderson@live.com>",
   "description": "Light weight, ultra portable, responsive javascript library, responsive all the things.",
-
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toxigenicpoem/henka.git"
+  },
   "devDependencies": {
     "grunt"    :  "*",
     "grunt-closure-compiler" : "*"
