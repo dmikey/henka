@@ -4,9 +4,15 @@ build: gruntfile.js
 	. henka/bin/activate && \
 	grunt
 
-buildinline: package
+buildinline: closure
 	. henka/bin/activate && \
 	grunt
+
+closure: package
+	. henka/bin/activate && \
+	git clone git@github.com:toxigenicpoem/closure-bin.git build || \
+	cd build && \
+	git pull
 
 packages: package.json
 	. henka/bin/activate && \
