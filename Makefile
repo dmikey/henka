@@ -23,7 +23,7 @@ package: grunt package.json
 	. henka/bin/activate && \
 	npm install
 
-grunt: reqs
+grunt: npm
 	. henka/bin/activate && \
 	npm install -g grunt-cli
 
@@ -44,3 +44,8 @@ cmod: venv
 #setup virtualenv with python, because it is awesome
 venv:
 	virtualenv henka --distribute --no-site-packages
+
+clean:
+	rm -rf build && \
+	rm -rf henka && \
+	rm -rf node_modules
