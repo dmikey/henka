@@ -14,12 +14,11 @@ closure: package
 	cd build && \
 	git pull
 
-packages: package.json
+packages: grunt package.json
 	. henka/bin/activate && \
-	npm install -g grunt-cli && \
 	npm install
 
-package: grunt package.json
+package: reqs grunt package.json
 	. henka/bin/activate && \
 	npm install
 
