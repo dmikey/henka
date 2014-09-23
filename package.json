@@ -9,7 +9,6 @@
     "url": "https://github.com/toxigenicpoem/henka.git"
   },
   "devDependencies": {
-    "grunt"    :  "*",
-    "grunt-closure-compiler" : "*"
+    "requirejs"    :  "*"
   }
 }
