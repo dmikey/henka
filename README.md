@@ -5,6 +5,8 @@ Light, portable, responsive javascript (a side step to avoid an attack).
 
 A single purpose library compatible with IE 6, 7, 8, 9, 10. Safari, Chrome, Firefox.
 
+Built with RequireJS in mind.
+
 ![Diagram by Todd. R Fleeman](https://dl.dropboxusercontent.com/u/10409166/henka/henka_done.png)
 
 
@@ -57,7 +59,7 @@ https://github.com/toxigenicpoem/yobidashi
 var cb = yobidashi.bind(function(){
     var breakpoint = this.currentBreak();
     //do some stuff here and you know the breakpoint
-}, henka);          
+}, henka);
 
 yobidashi.sub('/henka/resized', cb);
 //current channels are '/henka/resized' and '/henka/updated'
