@@ -9,6 +9,7 @@
     "url": "https://github.com/toxigenicpoem/henka.git"
   },
   "devDependencies": {
-    "requirejs"    :  "*"
+    "requirejs": "*",
+    "uglify-js": "^2.4.15"
   }
 }
