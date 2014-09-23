@@ -1,0 +1,3 @@
+[submodule "src/gunbai"]
+	path = src/gunbai
+	url = ../gunbai/
