@@ -1,3 +1,6 @@
 [submodule "src/gunbai"]
 	path = src/gunbai
 	url = ../gunbai/
+[submodule "src/yobidashi"]
+	path = src/yobidashi
+	url = ../yobidashi/
